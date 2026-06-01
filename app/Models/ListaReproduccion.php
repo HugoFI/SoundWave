@@ -5,19 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ListaReproduccion extends Model
 {
+    use HasFactory;
+
     protected $table = 'tbl_listas_reproduccion';
     protected $primaryKey = 'id_lista';
     
     protected $fillable = ['id_usuario_fk', 'nombre_lista', 'es_publica_lista'];
-
+    
     public function usuario(): BelongsTo
     {
         return $this->belongsTo(Usuario::class, 'id_usuario_fk', 'id_usuario'); 
     }
-
+    
     public function canciones(): BelongsToMany
     {
         return $this->belongsToMany(
