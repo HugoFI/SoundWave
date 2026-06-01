@@ -56,7 +56,7 @@
                             @csrf
                             <div class="admin-form-grupo">
                                 <label class="admin-label" for="nombre_artista">Nombre</label>
-                                <input class="admin-input" type="text" id="nombre_artista" name="nombre_artista" value="{{ old('nombre_artista') }}" required>
+                                <input class="admin-input" type="text" id="nombre_artista" name="nombre_artista" value="{{ old('nombre_artista') }}" >
                             </div>
                             <button class="admin-boton" type="submit">Guardar artista</button>
                         </form>
@@ -85,7 +85,7 @@
                             @csrf
                             <div class="admin-form-grupo">
                                 <label class="admin-label" for="nombre_genero">Nombre</label>
-                                <input class="admin-input" type="text" id="nombre_genero" name="nombre_genero" value="{{ old('nombre_genero') }}" required>
+                                <input class="admin-input" type="text" id="nombre_genero" name="nombre_genero" value="{{ old('nombre_genero') }}">
                             </div>
                             <button class="admin-boton" type="submit">Guardar genero</button>
                         </form>

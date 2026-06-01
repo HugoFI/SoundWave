@@ -35,6 +35,26 @@
                     <div class="admin-alerta admin-alerta-error">{{ session('error') }}</div>
                 @endif
 
+                <form class="admin-filtros" method="GET" action="{{ route('admin.usuarios') }}">
+                    @csrf
+                    <div class="admin-filtros-grupo">
+                        <label class="admin-label" for="buscar">Buscar por nombre o correo</label>
+                        <input
+                            class="admin-input"
+                            type="text"
+                            id="buscar"
+                            name="buscar"
+                            value="{{ $busqueda }}"
+                            placeholder="Ej: usuario o correo@ejemplo.com"
+                        >
+                    </div>
+
+                    <div class="admin-acciones">
+                        <button class="admin-boton" type="submit">Aplicar filtro</button>
+                        <a class="admin-link" href="{{ route('admin.usuarios') }}">Limpiar</a>
+                    </div>
+                </form>
+
                 <div class="admin-tabla">
                     <div class="admin-fila admin-cabecera">
                         <span>Nombre</span>

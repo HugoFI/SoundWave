@@ -47,7 +47,7 @@
                     @csrf
                     <div class="listas-grupo">
                         <label class="listas-label" for="nombre_lista">Nombre de la lista</label>
-                        <input class="listas-input" type="text" id="nombre_lista" name="nombre_lista" value="{{ old('nombre_lista') }}" required>
+                        <input class="listas-input" type="text" id="nombre_lista" name="nombre_lista" value="{{ old('nombre_lista') }}" placeholder="Ej: Mi lista de favs">
                     </div>
 
                     <label class="listas-check">

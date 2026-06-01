@@ -43,17 +43,17 @@
                     @csrf
                     <div class="admin-form-grupo">
                         <label class="admin-label" for="titulo_cancion">Titulo</label>
-                        <input class="admin-input" type="text" id="titulo_cancion" name="titulo_cancion" value="{{ old('titulo_cancion', $cancion->titulo_cancion) }}" required>
+                        <input class="admin-input" type="text" id="titulo_cancion" name="titulo_cancion" value="{{ old('titulo_cancion', $cancion->titulo_cancion) }}">
                     </div>
 
                     <div class="admin-form-grupo">
                         <label class="admin-label" for="duracion_cancion">Duracion (segundos)</label>
-                        <input class="admin-input" type="number" id="duracion_cancion" name="duracion_cancion" min="1" value="{{ old('duracion_cancion', $cancion->duracion_cancion) }}" required>
+                        <input class="admin-input" type="number" id="duracion_cancion" name="duracion_cancion" min="1" value="{{ old('duracion_cancion', $cancion->duracion_cancion) }}">
                     </div>
 
                     <div class="admin-form-grupo">
                         <label class="admin-label" for="id_artista_fk">Artista</label>
-                        <select class="admin-input" id="id_artista_fk" name="id_artista_fk" required>
+                        <select class="admin-input" id="id_artista_fk" name="id_artista_fk">
                             @foreach ($artistas as $artista)
                                 <option value="{{ $artista->id_artista }}" {{ (string) old('id_artista_fk', $cancion->id_artista_fk) === (string) $artista->id_artista ? 'selected' : '' }}>
                                     {{ $artista->nombre_artista }}
@@ -64,7 +64,7 @@
 
                     <div class="admin-form-grupo">
                         <label class="admin-label" for="id_genero_fk">Genero</label>
-                        <select class="admin-input" id="id_genero_fk" name="id_genero_fk" required>
+                        <select class="admin-input" id="id_genero_fk" name="id_genero_fk">
                             @foreach ($generos as $genero)
                                 <option value="{{ $genero->id_genero }}" {{ (string) old('id_genero_fk', $cancion->id_genero_fk) === (string) $genero->id_genero ? 'selected' : '' }}>
                                     {{ $genero->nombre_genero }}

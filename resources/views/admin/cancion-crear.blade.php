@@ -43,17 +43,17 @@
                     @csrf
                     <div class="admin-form-grupo">
                         <label class="admin-label" for="titulo_cancion">Titulo</label>
-                        <input class="admin-input" type="text" id="titulo_cancion" name="titulo_cancion" value="{{ old('titulo_cancion') }}" required>
+                        <input class="admin-input" type="text" id="titulo_cancion" name="titulo_cancion" value="{{ old('titulo_cancion') }}" >
                     </div>
 
                     <div class="admin-form-grupo">
                         <label class="admin-label" for="duracion_cancion">Duracion (segundos)</label>
-                        <input class="admin-input" type="number" id="duracion_cancion" name="duracion_cancion" min="1" value="{{ old('duracion_cancion') }}" required>
+                        <input class="admin-input" type="number" id="duracion_cancion" name="duracion_cancion" min="1" value="{{ old('duracion_cancion') }}" >
                     </div>
 
                     <div class="admin-form-grupo">
                         <label class="admin-label" for="id_artista_fk">Artista</label>
-                        <select class="admin-input" id="id_artista_fk" name="id_artista_fk" required>
+                        <select class="admin-input" id="id_artista_fk" name="id_artista_fk" >
                             <option value="">Selecciona un artista</option>
                             @foreach ($artistas as $artista)
                                 <option value="{{ $artista->id_artista }}" {{ old('id_artista_fk') == $artista->id_artista ? 'selected' : '' }}>
@@ -65,7 +65,7 @@
 
                     <div class="admin-form-grupo">
                         <label class="admin-label" for="id_genero_fk">Genero</label>
-                        <select class="admin-input" id="id_genero_fk" name="id_genero_fk" required>
+                        <select class="admin-input" id="id_genero_fk" name="id_genero_fk" >
                             <option value="">Selecciona un genero</option>
                             @foreach ($generos as $genero)
                                 <option value="{{ $genero->id_genero }}" {{ old('id_genero_fk') == $genero->id_genero ? 'selected' : '' }}>
@@ -77,12 +77,12 @@
 
                     <div class="admin-form-grupo">
                         <label class="admin-label" for="portada_cancion">Portada (imagen)</label>
-                        <input class="admin-input" type="file" id="portada_cancion" name="portada_cancion" accept=".jpg,.jpeg,.png,.webp" required>
+                        <input class="admin-input" type="file" id="portada_cancion" name="portada_cancion" accept=".jpg,.jpeg,.png,.webp" >
                     </div>
 
                     <div class="admin-form-grupo">
                         <label class="admin-label" for="audio_cancion">Audio</label>
-                        <input class="admin-input" type="file" id="audio_cancion" name="audio_cancion" accept=".mp3,.wav,.ogg" required>
+                        <input class="admin-input" type="file" id="audio_cancion" name="audio_cancion" accept=".mp3,.wav,.ogg" >
                     </div>
 
                     <button class="admin-boton" type="submit">Guardar tema</button>

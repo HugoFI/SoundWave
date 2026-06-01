@@ -9,13 +9,24 @@ use Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $usuario = Auth::user();
 
-        $usuarios = Usuario::orderBy('nombre_usuario')->get();
+        $busqueda = $request->input('buscar', '');
 
-        return view('admin.usuarios', compact('usuario', 'usuarios'));
+        $consulta = Usuario::orderBy('nombre_usuario');
+
+        if ($busqueda !== '') {
+            $consulta->where(function ($subquery) use ($busqueda) {
+                $subquery->where('nombre_usuario', 'like', "%{$busqueda}%")
+                    ->orWhere('email_usuario', 'like', "%{$busqueda}%");
+            });
+        }
+
+        $usuarios = $consulta->get();
+
+        return view('admin.usuarios', compact('usuario', 'usuarios', 'busqueda'));
     }
 
     public function cambiarEstado(int $id)

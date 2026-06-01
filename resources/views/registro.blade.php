@@ -27,48 +27,22 @@
                     @csrf
                     <div class="log-reg-campo">
                         <label for="nombre_usuario">Nombre</label>
-                        <input
-                            type="text"
-                            id="nombre_usuario"
-                            name="nombre_usuario"
-                            value="{{ old('nombre_usuario') }}"
-                            required
-                            autocomplete="name"
-                        >
+                        <input type="text" id="nombre_usuario" name="nombre_usuario" value="{{ old('nombre_usuario') }}" autocomplete="name">
                     </div>
 
                     <div class="log-reg-campo">
                         <label for="email_usuario">Correo</label>
-                        <input
-                            type="email"
-                            id="email_usuario"
-                            name="email_usuario"
-                            value="{{ old('email_usuario') }}"
-                            required
-                            autocomplete="email"
-                        >
+                        <input type="email" id="email_usuario" name="email_usuario" value="{{ old('email_usuario') }}" autocomplete="email">
                     </div>
 
                     <div class="log-reg-campo">
                         <label for="contrasena_usuario">Contrasena</label>
-                        <input
-                            type="password"
-                            id="contrasena_usuario"
-                            name="contrasena_usuario"
-                            required
-                            autocomplete="new-password"
-                        >
+                        <input type="password" id="contrasena_usuario" name="contrasena_usuario" autocomplete="new-password">
                     </div>
 
                     <div class="log-reg-campo">
                         <label for="contrasena_usuario_confirmation">Repite contrasena</label>
-                        <input
-                            type="password"
-                            id="contrasena_usuario_confirmation"
-                            name="contrasena_usuario_confirmation"
-                            required
-                            autocomplete="new-password"
-                        >
+                        <input type="password" id="contrasena_usuario_confirmation" name="contrasena_usuario_confirmation" autocomplete="new-password">
                     </div>
 
                     <button class="log-reg-boton" type="submit">Registrarme</button>

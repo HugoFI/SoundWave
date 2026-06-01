@@ -31,25 +31,12 @@
 					@csrf
 					<div class="log-reg-campo">
 						<label for="email_usuario">Correo</label>
-						<input
-							type="email"
-							id="email_usuario"
-							name="email_usuario"
-							value="{{ old('email_usuario') }}"
-							required
-							autocomplete="email"
-						>
+						<input type="email" id="email_usuario" name="email_usuario" value="{{ old('email_usuario') }}"  autocomplete="email">
 					</div>
 
 					<div class="log-reg-campo">
 						<label for="contrasena_usuario">Contrasena</label>
-						<input
-							type="password"
-							id="contrasena_usuario"
-							name="contrasena_usuario"
-							required
-							autocomplete="current-password"
-						>
+						<input type="password" id="contrasena_usuario" name="contrasena_usuario"  autocomplete="current-password">
 					</div>
 
 					<button class="log-reg-boton" type="submit">Entrar</button>
